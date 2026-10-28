@@ -1,6 +1,6 @@
-﻿namespace Interpreter.Logger
+﻿namespace ShellCore.KernelLogger
 {
-    public static class Dispatcher
+    public static class Logger
     {
         public enum LOG_STATE : int
         {
@@ -15,12 +15,14 @@
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"[SAFE]─> {log}");
                 Console.ForegroundColor = ConsoleColor.White;
-            } else if (log_state == LOG_STATE.Warning)
+            }
+            else if (log_state == LOG_STATE.Warning)
             {
                 Console.ForegroundColor = ConsoleColor.DarkYellow;
                 Console.WriteLine($"[Warning]─> {log}");
                 Console.ForegroundColor = ConsoleColor.White;
-            } else if (log_state == LOG_STATE.Critical)
+            }
+            else if (log_state == LOG_STATE.Critical)
             {
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine($"[Critical]─> {log}");
